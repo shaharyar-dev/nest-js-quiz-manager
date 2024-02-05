@@ -1,0 +1,42 @@
+Install node js ignore this
+sudo apt-get install npm
+sudo apt install nodejs
+sudo npm install -g n
+sudo n stable
+npm install i -g @nestjs/cli
+npm i -g @nestjs/schematics
+npm install -g @nestjs/cli@latest
+
+Uninstall
+sudo apt --auto-remove purge npm
+sudo apt --auto-remove purge nodejs
+sudo apt-get remove npm
+
+https://kinsta.com/knowledgebase/install-nest/
+https://stackoverflow.com/questions/47592667/npm-no-such-file-or-directory
+To create new project
+nest new my-nest-project
+
+sudo apt-get purge nodejs --auto-remove
+sudo apt-get purge npm --auto-remove
+whereis node
+sudo apt-get install nodejs
+sudo apt-get install npm
+
+Install nodejs (right one)
+
+https://www.javatpoint.com/install-nvm-ubuntu
+If error try this 
+source ~/.nvm/nvm.sh
+
+npm add class-validator
+npm add class-transformer
+npm add @nestjs/typeorm typeorm postgres mysql
+
+shaharyar-dev
+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
+
+syncronization should be false in production otherwise we will lose data
+Dont need repository module file because it is giving error no metadata for quiz repository
+
+Entity table will create table in db
