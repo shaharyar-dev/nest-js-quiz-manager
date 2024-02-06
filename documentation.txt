@@ -34,7 +34,7 @@ npm add class-transformer
 npm add @nestjs/typeorm typeorm postgres mysql
 
 shaharyar-dev
-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
+
 
 syncronization should be false in production otherwise we will lose data
 Dont need repository module file because it is giving error no metadata for quiz repository
