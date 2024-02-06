@@ -9,32 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Question = void 0;
+exports.Option = void 0;
 const typeorm_1 = require("typeorm");
-const quiz_entity_1 = require("./quiz.entity");
-const option_entity_1 = require("./option.entity");
-let Question = class Question extends typeorm_1.BaseEntity {
+const question_entity_1 = require("./question.entity");
+let Option = class Option extends typeorm_1.BaseEntity {
 };
-exports.Question = Question;
+exports.Option = Option;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
-], Question.prototype, "id", void 0);
+], Option.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)({
-        type: 'varchar'
+        type: 'varchar',
     }),
     __metadata("design:type", String)
-], Question.prototype, "question", void 0);
+], Option.prototype, "text", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => quiz_entity_1.Quiz, (quiz) => quiz.questions),
-    __metadata("design:type", quiz_entity_1.Quiz)
-], Question.prototype, "quiz", void 0);
+    (0, typeorm_1.Column)({
+        type: 'boolean',
+    }),
+    __metadata("design:type", Boolean)
+], Option.prototype, "isCorrect", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => option_entity_1.Option, (option) => option.question),
-    __metadata("design:type", Array)
-], Question.prototype, "options", void 0);
-exports.Question = Question = __decorate([
-    (0, typeorm_1.Entity)("questions")
-], Question);
-//# sourceMappingURL=question.entity.js.map
+    (0, typeorm_1.ManyToOne)(() => question_entity_1.Question, (question) => question.options),
+    __metadata("design:type", question_entity_1.Question)
+], Option.prototype, "question", void 0);
+exports.Option = Option = __decorate([
+    (0, typeorm_1.Entity)('options')
+], Option);
+//# sourceMappingURL=option.entity.js.map

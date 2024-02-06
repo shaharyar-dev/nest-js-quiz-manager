@@ -5,5 +5,6 @@ import { Quiz } from "../entities/quiz.entity";
 export declare class QuestionService {
     private questionRepository;
     constructor(questionRepository: Repository<Question>);
+    findQuestionById(id: number): Promise<Question>;
     createQuestion(question: CreateQuestionDto, quiz: Quiz): Promise<Question>;
 }

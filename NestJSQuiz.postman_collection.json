@@ -99,6 +99,35 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Option Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\" : \"data 1\",\n    \"questionId\" : 1,\n    \"isCorrect\" : 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/question/option",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"question",
+						"option"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

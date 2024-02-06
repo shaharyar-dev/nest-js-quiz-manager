@@ -12,31 +12,29 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.QuestionService = void 0;
+exports.OptionService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
-const question_entity_1 = require("../entities/question.entity");
-let QuestionService = class QuestionService {
-    constructor(questionRepository) {
-        this.questionRepository = questionRepository;
+const option_entity_1 = require("../entities/option.entity");
+let OptionService = class OptionService {
+    constructor(optionRepository) {
+        this.optionRepository = optionRepository;
     }
-    async findQuestionById(id) {
-        return await this.questionRepository.findOne({ where: { id: id }, relations: ["quiz", "options"] });
-    }
-    async createQuestion(question, quiz) {
-        const newQuestion = await this.questionRepository.save({
-            question: question.question
+    async createOption(option, question) {
+        const newOption = await this.optionRepository.save({
+            text: option.text,
+            isCorrect: option.isCorrect
         });
-        quiz.questions = [...quiz.questions, newQuestion];
-        await quiz.save();
-        return newQuestion;
+        question.options = [...question.options, newOption];
+        await question.save();
+        return newOption;
     }
 };
-exports.QuestionService = QuestionService;
-exports.QuestionService = QuestionService = __decorate([
+exports.OptionService = OptionService;
+exports.OptionService = OptionService = __decorate([
     (0, common_1.Injectable)(),
-    __param(0, (0, typeorm_1.InjectRepository)(question_entity_1.Question)),
+    __param(0, (0, typeorm_1.InjectRepository)(option_entity_1.Option)),
     __metadata("design:paramtypes", [typeorm_2.Repository])
-], QuestionService);
-//# sourceMappingURL=question.service.js.map
+], OptionService);
+//# sourceMappingURL=option.service.js.map
