@@ -33,6 +33,8 @@ npm add class-validator
 npm add class-transformer
 npm add @nestjs/typeorm typeorm postgres mysql
 npm i --save @nestjs/config
+npm i bcrypt @types/bcrypt
+
 nest g mo modules/user
 
 shaharyar-dev
