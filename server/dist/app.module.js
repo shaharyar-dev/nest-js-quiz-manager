@@ -13,12 +13,14 @@ const app_service_1 = require("./app.service");
 const quiz_module_1 = require("./modules/quiz/quiz.module");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_config_1 = require("./config/typeorm.config");
+const config_1 = require("@nestjs/config");
+const user_module_1 = require("./modules/user/user.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [quiz_module_1.QuizModule, typeorm_1.TypeOrmModule.forRoot(typeorm_config_1.typeOrmConfig)],
+        imports: [config_1.ConfigModule.forRoot({ isGlobal: true }), typeorm_1.TypeOrmModule.forRootAsync(typeorm_config_1.typeOrmConfigAsync), quiz_module_1.QuizModule, user_module_1.UserModule,],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })
